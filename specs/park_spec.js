@@ -39,7 +39,11 @@ describe('Park', function() {
     assert.strictEqual(park1.dinosaurs.length, 5);
   });
 
-  xit('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function() {
+    park1.removeDinosaur(dinosaur4);
+    assert.strictEqual(park1.dinosaurs.length, 3);
+  });
+
 
   xit('should be able to find the dinosaur that attracts the most visitors');
 
