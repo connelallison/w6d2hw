@@ -60,7 +60,9 @@ describe('Park', function() {
     assert.strictEqual(park1.annualVisitors(), 93075);
   });
 
-  xit("should be able to calculate the total revenue from ticket sales for one year");
+  it("should be able to calculate the total revenue from ticket sales for one year", function() {
+    assert.strictEqual(park1.annualRevenue(), 46537500);
+  });
 
   xit('should be able to remove all dinosaurs of a particular species');
 

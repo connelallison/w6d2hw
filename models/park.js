@@ -45,4 +45,8 @@ Park.prototype.annualVisitors = function() {
   return (this.dailyVisitors() * 365);
 }
 
+Park.prototype.annualRevenue = function() {
+  return (this.annualVisitors() * this.price);
+}
+
 module.exports = Park;
