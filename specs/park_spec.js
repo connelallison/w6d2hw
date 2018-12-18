@@ -69,6 +69,10 @@ describe('Park', function() {
     assert.strictEqual(park1.dinosaurs.length, 2);
   });
 
-  xit("should be able to provide an object containing the number of dinosaurs of each diet type");
+  it("should be able to provide an object containing the number of dinosaurs of each diet type", function() {
+    assert.deepStrictEqual(park1.dietNums(), {"carnivore": 2, "herbivore": 1, "omnivore": 1});
+    dinosaur2.diet = "vegan";
+    assert.deepStrictEqual(park1.dietNums(), {"carnivore": 1, "vegan": 1, "herbivore": 1, "omnivore": 1});
+  });
 
 });

@@ -55,4 +55,24 @@ Park.prototype.removeBySpecies = function(species) {
   })
 };
 
+Park.prototype.dietNums = function() {
+  let dietNums = {};
+  let dietTypes = [];
+  let dietCount = 0;
+  for (let i = 0; i < this.dinosaurs.length; i++ ) {
+    dietTypes.push(this.dinosaurs[i].diet);
+  }
+  dietTypes = [...new Set(dietTypes)];
+  for (let i = 0; i < dietTypes.length; i++) {
+    dietCount = 0;
+    for (let j = 0; j < this.dinosaurs.length; j++) {
+      if (this.dinosaurs[j].diet === dietTypes[i]) {
+        dietCount++;
+      }
+    }
+    dietNums[dietTypes[i]] = dietCount;
+  }
+  return dietNums;
+}
+
 module.exports = Park;
