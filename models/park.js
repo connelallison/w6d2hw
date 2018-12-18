@@ -27,9 +27,9 @@ Park.prototype.topDino = function() {
   }
 };
 
-Park.prototype.bySpecies = function(type) {
+Park.prototype.bySpecies = function(species) {
   return this.dinosaurs.filter(function(value) {
-    return value.species === type ;
+    return value.species === species ;
   })
 };
 
@@ -48,5 +48,11 @@ Park.prototype.annualVisitors = function() {
 Park.prototype.annualRevenue = function() {
   return (this.annualVisitors() * this.price);
 }
+
+Park.prototype.removeBySpecies = function(species) {
+  this.dinosaurs = this.dinosaurs.filter(function(value) {
+    return value.species !== species;
+  })
+};
 
 module.exports = Park;

@@ -13,7 +13,7 @@ describe('Park', function() {
 
   beforeEach(function () {
     dinosaur1 = new Dinosaur("t-rex", 'carnivore', 150);
-    dinosaur2 = new Dinosaur("pterodactyl", 'carnivore', 50);
+    dinosaur2 = new Dinosaur("t-rex", 'carnivore', 50);
     dinosaur3 = new Dinosaur("ankylosaurus", 'herbivore', 35);
     dinosaur4 = new Dinosaur("oviraptorosaur", 'omnivore', 20);
     dinosaurs = [dinosaur1, dinosaur2, dinosaur3, dinosaur4];
@@ -49,7 +49,7 @@ describe('Park', function() {
   });
 
   it('should be able to find all dinosaurs of a particular species', function() {
-    assert.deepStrictEqual(park1.bySpecies('t-rex'), [dinosaur1]);
+    assert.deepStrictEqual(park1.bySpecies('t-rex'), [dinosaur1, dinosaur2]);
   });
 
   it("should be able to calculate the total number of visitors per day", function() {
@@ -64,7 +64,10 @@ describe('Park', function() {
     assert.strictEqual(park1.annualRevenue(), 46537500);
   });
 
-  xit('should be able to remove all dinosaurs of a particular species');
+  it('should be able to remove all dinosaurs of a particular species', function() {
+    park1.removeBySpecies("t-rex");
+    assert.strictEqual(park1.dinosaurs.length, 2);
+  });
 
   xit("should be able to provide an object containing the number of dinosaurs of each diet type");
 
