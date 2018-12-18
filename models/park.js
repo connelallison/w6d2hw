@@ -27,4 +27,18 @@ Park.prototype.topDino = function() {
   }
 };
 
+Park.prototype.bySpecies = function(type) {
+  return this.dinosaurs.filter(function(value) {
+    return value.species === type ;
+  })
+};
+
+Park.prototype.dailyVisitors = function() {
+  let total = 0;
+  for (let i=0; i < this.dinosaurs.length; i++){
+    total += this.dinosaurs[i].guestsAttractedPerDay;
+  }
+  return total;
+}
+
 module.exports = Park;
