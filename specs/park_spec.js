@@ -56,7 +56,9 @@ describe('Park', function() {
     assert.strictEqual(park1.dailyVisitors(), 255);
   });
 
-  xit("should be able to calculate the total number of visitors per year");
+  it("should be able to calculate the total number of visitors per year", function() {
+    assert.strictEqual(park1.annualVisitors(), 93075);
+  });
 
   xit("should be able to calculate the total revenue from ticket sales for one year");
 
